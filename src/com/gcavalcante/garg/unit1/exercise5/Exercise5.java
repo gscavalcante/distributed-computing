@@ -12,6 +12,10 @@ public class Exercise5 {
 		list = ListUtil.generateOrderedListOfIntegers(listSize);
 	}
 
+	public Exercise5(List<Integer> list) {
+		this.list = list;
+	}
+
 	public int search(int searchedNumber) {
 		Search asc = new SearchAsc(list, searchedNumber);
 		Search desc = new SearchDesc(list, searchedNumber);
@@ -24,14 +28,14 @@ public class Exercise5 {
 
 		ascThread.start();
 		descThread.start();
-		
+
 		try {
 			descThread.join();
 			ascThread.join();
-			
+
 			int ascResult = asc.getResult();
 			int descResult = desc.getResult();
-			
+
 			if (ascResult > 0) {
 				return ascResult;
 			} else {
@@ -40,7 +44,7 @@ public class Exercise5 {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		
+
 		return -1;
 	}
 }
