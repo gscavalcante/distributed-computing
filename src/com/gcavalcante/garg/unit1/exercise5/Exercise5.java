@@ -3,7 +3,11 @@ package com.gcavalcante.garg.unit1.exercise5;
 import java.util.List;
 
 import com.gcavalcante.util.ListUtil;
-
+/*
+ * Write a program in Java that uses two threads to search for a given element
+ * in a doubly linked list. One thread traverses the list in the forward
+ * direction and the other. in the backward direction.
+ */
 public class Exercise5 {
 
 	private List<Integer> list;
